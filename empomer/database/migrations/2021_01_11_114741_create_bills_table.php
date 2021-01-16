@@ -13,8 +13,11 @@ class CreateBillsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bills', function (Blueprint $table) {
-            $table->id();
+        Schema::create('bills', function (Blueprint $table) {            
+            $table->biginteger('id')->primary();
+            $table->date('date_expedition');
+            $table->biginteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->timestamps();
         });
     }

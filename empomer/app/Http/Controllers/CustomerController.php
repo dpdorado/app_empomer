@@ -64,7 +64,7 @@ class CustomerController extends Controller
         ]);
         $customer->save();
         
-        return redirect('/customers')->with('success', 'Cliente guardado!');
+        return redirect('/customers')->with('success', 'El cliente '.$request->get('id').' ha sido registrado!');
     }
 
     /**
@@ -98,15 +98,15 @@ class CustomerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {        
         $request->validate([
-            'first_name' => $request->get('first_name'),
-            'last_name' => $request->get('last_name'),
-            'extract' => $request->get('extract'),
+            'id' => 'exists:customers,id',
+            'first_name'=>'required',
+            'last_name'=>'required',
+            'extract'=>'required|integer',
             'direction'=>'required',
-            'telephone'=>'required|integer' 
-        ]);
-
+            'telephone'=>'required|integer'
+        ]);        
         $customer = Customer::find($id);
         $customer->first_name =  $request->get('first_name');
         $customer->last_name = $request->get('last_name');
@@ -115,7 +115,7 @@ class CustomerController extends Controller
         $customer->telephone = $request->get('telephone');        
         $customer->save();
 
-        return redirect('/customers')->with('success', 'Información actualizada!');
+        return redirect('/customers')->with('success', 'Información del cliente '.$id.' actualizada!');
     }
 
     /**
@@ -129,6 +129,6 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
         $customer->delete();
 
-        return redirect('/customers')->with('success', 'Cliente eliminado!');
+        return redirect('/customers')->with('success', 'El cliente '.$id.' ha sido eliminado!');
     }
 }

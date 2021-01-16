@@ -10,6 +10,7 @@ class Customer extends Model
     use HasFactory;
     
     protected $primaryKey = 'id';
+    protected $table = 'customers';
 
     protected $fillable = [
         'id',
@@ -18,5 +19,11 @@ class Customer extends Model
         'extract',
         'direction',
         'telephone'
-    ];
+    ];    
+
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
+
 }
