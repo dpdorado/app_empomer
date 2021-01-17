@@ -26,6 +26,18 @@ class Bill extends Model
     public function detail()
     {
         return $this->hasOne(Detail::class);
-    }    
+    }   
+    
+    public static function generate_id()
+    {
+        $bill_result = Bill::latest('id')->first();        
+        $bill_id=0;       
+        if (is_null($bill_result)){
+            $bill_id = 1000;
+        }else{
+            $bill_id = $bill_result->id + 1;
+        }
+        return $bill_id;
+    }
 
 }

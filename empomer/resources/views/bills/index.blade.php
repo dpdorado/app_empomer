@@ -5,10 +5,10 @@
 
 
 <div class="col-sm-12">
-  <h1 class="display-3">Clientes</h1>    
+  <h1 class="display-3">Facturas</h1>    
   
   <div>
-    <a style="margin: 19px;" href="{{ route('customers.create')}}" class="btn btn-primary">Agregar cliente</a>
+    <a style="margin: 19px;" href="{{ route('bills.create')}}" class="btn btn-primary">Agregar factura</a>
   </div> 
 
   <div class="col-sm-12">
@@ -29,29 +29,29 @@
   <table class="table table-striped">
     <thead>
         <tr>
+          <td>Numero factura</td>
+          <td>Fecha expedición</td>
           <td>Cedula</td>
-          <td>Nombres</td>
-          <td>Apellidos</td>
-          <td>Extracto</td>          
-          <td>Dirección</td>
-          <td>Teléfono</td>
+          <td>Descripción</td>
+          <td>Fecha inicio</td>          
+          <td>Fecha fin</td>          
           <td colspan = 2>Opciones</td>
         </tr>
     </thead>
     <tbody>
-        @forelse($customers as $customer)
+        @forelse($bills as $bill)
         <tr>
-            <td>{{$customer->id}}</td>
-            <td>{{$customer->first_name}}</td>
-            <td>{{$customer->last_name}}</td>
-            <td>{{$customer->extract}}</td>
-            <td>{{$customer->direction}}</td>
-            <td>{{$customer->telephone}}</td>
+            <td>{{$bill->id}}</td>
+            <td>{{$bill->date_expedition}}</td>
+            <td>{{$bill->customer_id}}</td>
+            <td>{{$bill->detail->description}}</td>
+            <td>{{$bill->detail->start_date}}</td>
+            <td>{{$bill->detail->end_date}}</td>
             <td>
-                <a href="{{ route('customers.edit',$customer->id)}}" class="btn btn-primary">Editar</a>
+                <a href="{{ route('bills.edit',$bill->id)}}" class="btn btn-primary">Editar</a>
             </td>
             <td>
-                <form action="{{ route('customers.destroy', $customer->id)}}" method="post">
+                <form action="{{ route('bills.destroy', $bill->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Borrar</button>
@@ -59,12 +59,12 @@
             </td>
         </tr>
         @empty
-          <p>No se encontraron clientes registrados.</p>
+          <p>No se encontraron facturas registradas.</p>
         @endforelse                
     </tbody>
   </table>
   <div>
-    {{ $customers->links() }}
+    {{ $bills->links() }}
   </div>
 <div>
 </div>

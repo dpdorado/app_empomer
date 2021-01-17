@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\BillController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GiftController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +30,6 @@ Route::put('/customers/{customer}', [CustomerController::class, 'update']);
 Route::delete('/customers/{customer}', [CustomerController::class, 'destroy']);*/
 
 Route::resource('customers', CustomerController::class);
+Route::resource('bills', BillController::class);
+Route::resource('categories', CategoryController::class);
+Route::resource('gifts', GiftController::class);

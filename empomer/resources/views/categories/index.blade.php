@@ -5,10 +5,10 @@
 
 
 <div class="col-sm-12">
-  <h1 class="display-3">Clientes</h1>    
+  <h1 class="display-3">Categorias </h1>    
   
   <div>
-    <a style="margin: 19px;" href="{{ route('customers.create')}}" class="btn btn-primary">Agregar cliente</a>
+    <a style="margin: 19px;" href="{{ route('categories.create')}}" class="btn btn-primary">Agregar categoria</a>
   </div> 
 
   <div class="col-sm-12">
@@ -29,29 +29,21 @@
   <table class="table table-striped">
     <thead>
         <tr>
-          <td>Cedula</td>
-          <td>Nombres</td>
-          <td>Apellidos</td>
-          <td>Extracto</td>          
-          <td>Dirección</td>
-          <td>Teléfono</td>
+          <td>Id categoria</td>          
+          <td>Nombre</td>          
           <td colspan = 2>Opciones</td>
         </tr>
     </thead>
     <tbody>
-        @forelse($customers as $customer)
+        @forelse($categories as $category)
         <tr>
-            <td>{{$customer->id}}</td>
-            <td>{{$customer->first_name}}</td>
-            <td>{{$customer->last_name}}</td>
-            <td>{{$customer->extract}}</td>
-            <td>{{$customer->direction}}</td>
-            <td>{{$customer->telephone}}</td>
+            <td>{{$category->id}}</td>
+            <td>{{$category->name}}</td>            
             <td>
-                <a href="{{ route('customers.edit',$customer->id)}}" class="btn btn-primary">Editar</a>
+                <a href="{{ route('categories.edit',$category->id)}}" class="btn btn-primary">Editar</a>
             </td>
             <td>
-                <form action="{{ route('customers.destroy', $customer->id)}}" method="post">
+                <form action="{{ route('categories.destroy', $category->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Borrar</button>
@@ -59,12 +51,12 @@
             </td>
         </tr>
         @empty
-          <p>No se encontraron clientes registrados.</p>
+          <p>No se encontraron categorias registradas.</p>
         @endforelse                
     </tbody>
   </table>
   <div>
-    {{ $customers->links() }}
+    {{ $categories->links() }}
   </div>
 <div>
 </div>

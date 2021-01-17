@@ -13,8 +13,7 @@ class Category extends Model
 
     protected $fillable = [
         'id',
-        'name',
-        'type'        
+        'name'        
     ];    
         
 }
