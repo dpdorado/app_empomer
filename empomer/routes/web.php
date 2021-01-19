@@ -29,7 +29,11 @@ Route::get('/customers/{customer}/edit', [CustomerController::class, 'edit']);
 Route::put('/customers/{customer}', [CustomerController::class, 'update']);
 Route::delete('/customers/{customer}', [CustomerController::class, 'destroy']);*/
 
-Route::resource('customers', CustomerController::class);
-Route::resource('bills', BillController::class);
-Route::resource('categories', CategoryController::class);
-Route::resource('gifts', GiftController::class);
+Route::resource('customers', CustomerController::class)->middleware('auth');
+Route::resource('bills', BillController::class)->middleware('auth');
+Route::resource('categories', CategoryController::class)->middleware('auth');
+Route::resource('gifts', GiftController::class)->middleware('auth');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
