@@ -9,106 +9,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
 
-    <title>Empomer</title>
-    <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    /* Style the header */
-    header {
-      background-color: #666;
-      padding: 30px;
-      text-align: center;
-      font-size: 35px;
-      color: white;
-    }
-
-    /* Create two columns/boxes that floats next to each other */
-    nav {
-      float: left;
-      width: 30%;
-      height: 300px; /* only for demonstration, should be removed */
-      background: #ccc;
-      padding: 20px;
-    }
-
-    /* Style the list inside the menu */
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    article {
-      float: left;
-      padding: 20px;
-      width: 70%;
-      background-color: #f1f1f1;
-      height: 300px; /* only for demonstration, should be removed */
-    }
-
-    /* Clear floats after the columns */
-    section::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* Style the footer */
-    footer {
-      background-color: #777;
-      padding: 10px;
-      text-align: center;
-      color: white;
-    }
-
-    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-    @media (max-width: 600px) {
-      nav, article {
-        width: 100%;
-        height: auto;
-      }
-    }
-    </style>
+    <title>Empomer</title> 
   </head>
-  <body> 
+  <body>           
+    <div class= "container">
+      <header>
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="" data-toggle="pill" href="{{ route('customers.index')}}" role="tab" aria-controls="v-pills-home" aria-selected="true">Clientes</a>
+          <a class="nav-link" id="" data-toggle="pill" href="{{ url('bills/')}}" role="tab" aria-controls="v-pills-profile" aria-selected="false">Facturas</a>
+          <a class="nav-link" id="" data-toggle="pill" href="{{ route('gifts.index')}}" role="tab" aria-controls="v-pills-messages" aria-selected="false">Ofrendas</a>
+          <a class="nav-link" id="" data-toggle="pill" href="{{ route('categories.index')}}" role="tab" aria-controls="v-pills-settings" aria-selected="false">Categorias</a>
+        </div>
+      </header>
 
-    <header>
-      <h2>Empomer</h2>
-    </header>
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="container-fluid">
+          @yield('main')
+        </div>      
+      </div>
 
-    <section>
-      <nav>
-        <ul>
-          <li><a href="#">Clientes</a></li>
-          <li><a href="#">Facturas</a></li>
-          <li><a href="#">Ofrendas</a></li>
-          <li><a href="#">Categorias</a></li>
-        </ul>
-      </nav>
-      
-      <article>
-        <h1>London</h1>
-        <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-        <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-      </article>
+      <footer class="text-center">
+        <p>&copy; 2020 Empomer derechos reservados</p>
+      </footer>
+    </div>    
 
-
-
-      
-    </section>
-
-    <footer>
-      <p>Footer</p>
-    </footer>
-
-    <div class="container">
-      @yield('main')
-    </div>
     <script src="{{ asset('js/app.js') }}" type="text/js"></script>
 
     <!-- Optional JavaScript; choose one of the two! -->

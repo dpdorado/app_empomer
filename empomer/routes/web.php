@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('home', function () {
+    return view('center');
+});
+
 /*Route::get('/index', [CustomerController::class, 'index']);
 Route::get('/customers/create', [CustomerController::class, 'create']);
 Route::post('/customers', [CustomerController::class, 'store']);
@@ -35,5 +39,5 @@ Route::resource('categories', CategoryController::class)->middleware('auth');
 Route::resource('gifts', GiftController::class)->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('center');
 })->name('dashboard');
