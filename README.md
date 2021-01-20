@@ -1,6 +1,6 @@
 # Aplicación web para la empresa Empomer
 
->La aplicación esta desarrollada con Laravel 8 y su sistema de plantillas Blade y se utiliza Bootstrap principalmente para los diseño para los diseños.
+>La aplicación esta desarrollada con Laravel 8 y su sistema de plantillas Blade y se utiliza Bootstrap principalmente para los diseños.
 >
 >Se utiliza como motor de bases de datos a MySQL y se utiliza los modelos Eloquent y Migraciones de Laravel.
 
