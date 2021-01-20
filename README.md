@@ -27,9 +27,64 @@ listado de facturas.
 
 # Modelo físico de la Base de Datos
 
+![Modelo físico de la BD Empomer](https://raw.githubusercontent.com/dpdorado/app_empomer/main/bd/modelo_fisico.png)
+
 # Vistas de la App Empomer
 
-![Modelo físico de la BD Empomer](https://raw.githubusercontent.com/dpdorado/app_empomer/main/bd/modelo_fisico.png)
+>* Bienvenida : empomer/resources/views/welcome.blade.php
+
+![Modelo físico de la BD Empomer](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/welcome.png)
+
+>* Registro de usuarios : empomer/resources/views/auth/register.blade.php
+
+![Register](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/register.png)
+
+
+>* Inicio de sesión de usuarios : empomer/resources/views/auth/login.blade.php
+
+![Login](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/login.png)
+
+>* Home de usuario logueado : empomer/resources/views/center.blade.php
+
+![Home](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/home.png)
+
+>* Lsta de clientes registrados : empomer/resources/views/customers/index.blade.php
+
+![Register customers](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/customers.png)
+
+>* Registro de clientes : empomer/resources/views/customers/register.blade.php
+
+![Register customers](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/customers_create.png)
+
+>* Editar clientes : empomer/resources/views/customers/edit.blade.php
+
+![Update customers](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/customers_edit.png)
+
+>* Lsta de facturas registradas : empomer/resources/views/bills/index.blade.php
+
+![Register bills](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/bill.png)
+
+>* Registro de facturas : empomer/resources/views/bills/register.blade.php
+
+![Register bills](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/bills_create.png)
+
+>* Editar facturas : empomer/resources/views/bills/edit.blade.php
+
+![Update bills](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/bills_edit.png)
+
+
+>* Lsta de categorias registradas : empomer/resources/views/categories/index.blade.php
+
+![Register categories](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/categories.png)
+
+>* Registro de categorias : empomer/resources/views/categories/register.blade.php
+
+![Register categories](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/categories_create.png)
+
+>* Editar categorias : empomer/resources/views/categories/edit.blade.php
+
+![Update categorias](https://raw.githubusercontent.com/dpdorado/app_empomer/main/screenshot/categories_edit.png)
+
 
 # Requerimientos
 
