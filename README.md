@@ -29,6 +29,8 @@ listado de facturas.
 
 # Vistas de la App Empomer
 
+![Modelo físico de la BD Empomer](https://raw.githubusercontent.com/dpdorado/app_empomer/main/bd/modelo_fisico.png)
+
 # Requerimientos
 
 >* Tener instalado composer.
