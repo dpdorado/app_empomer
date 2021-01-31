@@ -29,6 +29,8 @@ listado de facturas.
 
 ![Modelo físico de la BD Empomer](https://raw.githubusercontent.com/dpdorado/app_empomer/main/bd/modelo_fisico.png)
 
+>* Versión SQL: db/empomer_sql.txt
+
 # Vistas de la App Empomer
 
 >* Bienvenida : empomer/resources/views/welcome.blade.php
